@@ -154,3 +154,21 @@ Note: Angular 12+ no longer has Protractor pre-installed for E2E testing (will b
 
 > npm install prettier-eslint eslint-config-prettier eslint-plugin-prettier --save-dev
 
+///https://stackoverflow.com/questions/68519065/why-does-prettier-put-the-trailing-comma-on-its-own-and-give-an-error-saying-tha
+Change your .prettierrc file so that it looks like this:
+
+    // "./.prettierrc"
+    {
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "all",
+    }
+
+
+Add the following setting, configured as it is below, to your ESLint Rules property that's inside of your .eslintrc.json file.
+
+    // "./.eslintrc.json"
+    {
+        "comma-dangle": ["error", "always"],
+
+    }

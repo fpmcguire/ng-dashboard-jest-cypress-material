@@ -16,7 +16,7 @@
         "createDefaultProgram": true
       },
       "extends": [
-        /*  "plugin:@angular-eslint/recommended", */
+        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
       ],
@@ -26,7 +26,11 @@
           {
             "type": "attribute",
             "prefix": "app",
-            "style": "camelCase"
+            "style": "camelCase",
+            "comma-dangle": [
+              "error",
+              "always"
+            ]
           }
         ],
         "@angular-eslint/component-selector": [
@@ -43,20 +47,10 @@
       "files": [
         "*.html"
       ],
-      "excludedFiles": [
-        "*inline-template-*.component.html"
-      ],
       "extends": [
-        "plugin:prettier/recommended"
+        "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "parser": "angular"
-          }
-        ]
-      }
+      "rules": {}
     }
   ]
 }
