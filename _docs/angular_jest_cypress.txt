@@ -148,5 +148,7 @@ Note: Angular 12+ no longer has Protractor pre-installed for E2E testing (will b
     }
   }
 
-
+/// Prettier
+/// https://dev.to/eneajaho/configure-prettier-and-eslint-with-angular-526c
+> npm install prettier --save-dev
 

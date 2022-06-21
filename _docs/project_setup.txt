@@ -86,6 +86,7 @@ In 'app.component.html':
 _project-resources
 
 
+
 /// replace tsLint with EsLint
 /// https://offering.solutions/blog/articles/2021/09/30/adding-eslint-and-cypress-to-a-new-angular-project/
 /// https://github.com/angular-eslint/angular-eslint/issues/790
