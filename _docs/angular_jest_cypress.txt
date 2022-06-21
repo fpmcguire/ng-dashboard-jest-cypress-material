@@ -1,0 +1,152 @@
+Angular 13: Installing and using Jest
+
+References:
+https://jestjs.io/
+https://www.youtube.com/watch?v=jFTlthbCVxE
+
+Add angular/cdk
+> npm install @angular/cdk
+
+Remove Kama:
+> npm uninstall @types/jasmine karma karma-chrome-launcher karma-coverage karma-jasmine-html-reporter jasmine-core
+
+Edit 'angular.json':
+- remove entire 'test: {}' object
+
+Delete 'karma.js' file
+
+Delete 'src/test.ts' file
+
+Install Jest files:
+
+> npm install --save-dev jest @types/jest jest-preset-angular ts-jest
+See: https://www.npmjs.com/package/jest-preset-angular
+See: https://jestjs.io/docs/configuration
+
+--- OR ---
+
+> npm i -D jest @types/jest @angular-builders/jest
+See: https://www.npmjs.com/package/@angular-builders/jest
+
+// For 'jest-preset-angular' option:
+
+Create 'src/setup.jest.ts':
+
+import 'jest-preset-angular/setup-jest'
+
+Modify 'tsconfig.spec.json':
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jest",
+      "node"
+    ]
+  },
+  "files": [
+    "src/setup.jest.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}
+
+Add 'jest' object to 'package.json'
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup.jest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$"
+      }
+    }
+  }
+
+Modify 'scripts' object in 'package.json'
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+
+Modify 'compilerOptions' object in 'tsconfig.json' by adding "esModuleInterop": true,
+
+  "compilerOptions": {
+    ...
+    "esModuleInterop": true,
+    ...
+	}
+
+Convert 'app.component.spec.ts' to jest:
+- Replace contents with:
+
+import { AppComponent } from "./app.component";
+
+describe('AppComponent', () => {
+  let fixture = new AppComponent();
+
+  beforeEach(() => {
+    fixture = new AppComponent();
+  })
+
+  it('should have a title <app-title>', () => {
+    expect(fixture.title).toEqual('<app-title>');
+
+  })
+})
+
+
+Angular 13: Installing and using Cypress (E2E)
+
+References:
+https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements
+https://www.youtube.com/watch?v=ke1qAgF7Pt0
+https://www.youtube.com/watch?v=wGiU4qdFL6U
+
+Note: Angular 12+ no longer has Protractor pre-installed for E2E testing (will be deprecated 2022)
+
+/// display the recommended command to install Cypress
+> ng e2e
+> ng add @cypress/schematic
+
+/// to fix display error in 'cypress/plugins/index.html' and add node type
+> npm i --save-dev @types/node
+
+/// add node type in 'cypress/tsconfig.json'
+"types": ["cypress", "node"]
+
+/// modify 'package.json' for Jest to ignore integration tests in cypress folder:
+"jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup.jest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/cypress/",
+      "<rootDir>/dist/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$"
+      }
+    }
+  }
+
+
+

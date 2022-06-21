@@ -1,5 +1,33 @@
 # NgDashboardJestCypressMaterial
 
+Name: Frank McGuire <br>
+Email: fpmcguire@gmail.com <br>
+Date: 21.06.2022
+
+# Description
+
+This project is instended to be used as a template for Angular 14 basic dashboard projects with Jest, Cypress, EsLint, and Material.
+
+## Unit and E2E tests
+
+<ul>
+  <li>Unit test: npm run test</li>
+  <li>E2E test: npm run e2e</li>
+</ul>
+
+<hr>
+
+## Angular and library versions
+
+<ul>
+  <li>Angular CLI version 14.0.2</li>
+  <li>Jest version 28.1.1</li>
+  <li>Cypress version 10.1.0</li>
+  <li>EsLint version 8.12.0</li>
+</ul>
+
+<hr>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
 ## Development server

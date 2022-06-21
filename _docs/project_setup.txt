@@ -1,0 +1,117 @@
+/// RESOURCES:
+
+// JSON data
+https://jsonplaceholder.typicode.com/
+https://any-api.com/
+
+https://swapi.dev/api/people
+https://swapi.dev/api/starships
+people/1/ or planets/3/ or starships/9/
+
+// JSON to TypeScript
+https://transform.tools/json-to-typescript
+http://json2ts.com/
+
+// API Images
+https://the-api-collective.com/category/photography
+https://unsplash.com/
+https://www.pexels.com/api/
+
+
+> ng new <project-name>
+- routing, SCSS
+
+// VSCode
+add <project-name> to Workspace
+open new terminal to <project-name>
+
+/// UI: Material
+// add Material
+> ng add @angular/material
+
+Material Schematics (to generate components):
+
+Address form schematic:
+  Material Design form fields
+  Material Design radio controls
+  Material Design buttons
+> ng generate @angular/material:address-form <component-name>
+
+ Navigation schematic:
+> ng generate @angular/material:navigation <component-name>
+
+ Table schematic:
+ > ng generate @angular/material:table <component-name>
+
+ Dashboard schematic (uses 'mat-tree'):
+ > ng generate @angular/material:tree <component-name>
+
+ Drag and Drop schematic:
+ > ng generate @angular/cdk:drag-drop <component-name>
+
+In 'app.module.ts':
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+
+In 'app.component.html':
+
+<div>
+  <span>Welcome</span>
+</div>
+<div>
+  <span>{{ title }} app is running!</span>
+</div>
+
+<div>
+  <button mat-button>Basic</button>
+  <button mat-button color="primary">Primary</button>
+  <button mat-button color="accent">Accent</button>
+  <button mat-button color="warn">Warn</button>
+  <button mat-button disabled>Disabled</button>
+  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+</div>
+
+<router-outlet></router-outlet>
+
+
+// Git
+> git init
+
+
+// add testing Jest/Cypress (optional)
+
+// create project resources (docs, media assets, json, etc.)
+_project-resources
+
+
+/// replace tsLint with EsLint
+/// https://offering.solutions/blog/articles/2021/09/30/adding-eslint-and-cypress-to-a-new-angular-project/
+> ng add @angular-eslint/schematics
+
+// Create Basic Architecture:
+_core
+_facade
+_presentation
+	shared
+guards
+model
+	constants/constants.ts
+	blahblah/blahblah.ts (JSON to TS) https://transform.tools/json-to-typescript
+
+// create layer services
+core.service.ts
+facade.service.ts
+
+// create modules in presentation
+// add default paths in routes[]
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full'}
+
+// add modules to app.module.ts
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
