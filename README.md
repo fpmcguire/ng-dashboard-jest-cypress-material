@@ -21,9 +21,11 @@ This project is instended to be used as a template for Angular 14 basic dashboar
 
 <ul>
   <li>Angular CLI version 14.0.2</li>
+  <li>Material version 14.0.2</li>
+  <li>Maretial Icons version 1.11.2</li>
   <li>Jest version 28.1.1</li>
   <li>Cypress version 10.1.0</li>
-  <li>EsLint version 8.12.0</li>
+  <li>EsLint version 8.17.0</li>
 </ul>
 
 <hr>

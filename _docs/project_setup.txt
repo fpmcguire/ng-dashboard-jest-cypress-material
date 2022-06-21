@@ -28,6 +28,7 @@ open new terminal to <project-name>
 /// UI: Material
 // add Material
 > ng add @angular/material
+> npm i material-icons
 
 Material Schematics (to generate components):
 
@@ -87,7 +88,8 @@ _project-resources
 
 /// replace tsLint with EsLint
 /// https://offering.solutions/blog/articles/2021/09/30/adding-eslint-and-cypress-to-a-new-angular-project/
-> ng add @angular-eslint/schematics
+/// https://github.com/angular-eslint/angular-eslint/issues/790
+> ng add @angular-eslint/schematics@next
 
 // Create Basic Architecture:
 _core
