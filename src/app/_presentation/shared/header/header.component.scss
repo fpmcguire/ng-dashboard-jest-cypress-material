@@ -1,0 +1,42 @@
+.header-container {
+  display: inline-flex;
+  width: 100%;
+  background-color: white;
+  padding-top: 1rem;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.header-logo {
+  display: inline;
+  vertical-align: middle;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.header-user {
+  display: inline;
+  padding-top: 1rem;
+  vertical-align: middle;
+  display: relative;
+  right: 0;
+}
+
+.header-initials {
+  display: inline;
+  vertical-align: middle;
+  background-color: #f6ca65;
+  color: white;
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.header-username {
+  display: inline;
+  vertical-align: middle;
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
